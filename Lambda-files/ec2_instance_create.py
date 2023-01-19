@@ -20,7 +20,7 @@ def describe_ec2_instance():
     try:
         print ("Describing EC2 Instance")
         resource_ec2 = boto3.client("ec2")
-        print(resource_ec2.describe_instances(InstanceIds=['i-06310c84eccb7da5f']))
+        print(resource_ec2.describe_instances()["Reservations"][0]["Instances"][0]["InstanceId"])
     except Exception as e:
         print(e)
 
